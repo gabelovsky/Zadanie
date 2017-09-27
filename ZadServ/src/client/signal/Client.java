@@ -1,20 +1,16 @@
 package client.signal;
 
-import server.communication.SignalReceiver;
+import server.communication.ServerComm;
 
 public class Client {
 	
-	SignalReceiver sigRec;
+	
 	
 	
 	private Client(){};
 	
-	public Client(SignalReceiver sig){
-		sigRec=sig;
-	}
 	
 	
-	public void sendSignal(){
-		
-	}
+	
+
 }
