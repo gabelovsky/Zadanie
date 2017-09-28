@@ -1,0 +1,16 @@
+
+div.emp{
+   text-align: left;
+   border:3px solid black;
+   margin: 0.5%;
+   height: 10%;
+  
+}
+div p{
+  
+  left: 3%; 
+  top: 20%;
+  position: relative; 
+  height: auto; 
+}
+
