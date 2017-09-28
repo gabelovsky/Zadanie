@@ -13,17 +13,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 public class EmpListController {
  
+	/**
+	 * Main page of employees
+	 * @param model
+	 * @return "empList.jsp"
+	 */
     @RequestMapping(method = RequestMethod.GET)
     public String empPage(ModelMap model) {
-    	
-    	 List<String> listOfEmp = new ArrayList<String>(Arrays.asList("Peter","Peter2","Maria"));
+    	List<String> listOfEmp = new ArrayList<String>(Arrays.asList("Peter","Peter2","Maria"));
         model.addAttribute("lists", listOfEmp);
         return "empList";
     }
  
+    /**
+     * Redirect on employee click
+     * @param model
+     * @return "hello.jsp"
+     */
    @RequestMapping(value="/hello", method = RequestMethod.GET)
     public String subPage(ModelMap model) {
-      
         return "hello";
     }
  

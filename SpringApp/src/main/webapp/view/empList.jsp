@@ -13,7 +13,7 @@
 	<p1>Employees:</p1>
     
 			<c:forEach var="listValue" items="${lists}">
-				<div class="emp" onclick="location.href='./hello';"><p>${listValue}  Currently working: NO Reason: var</p></div>
+				<div class="emp" onclick="location.href='./hello';"><p>${listValue}  Currently working: NO Reason: if here</p></div>
 			</c:forEach>
 		
 
