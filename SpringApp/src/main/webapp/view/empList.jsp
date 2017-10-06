@@ -13,9 +13,9 @@
 
 <body>
 	<p1>Employees:</p1>
-	<c:forEach var="listValue" items="${lists}">
-		  <div class="emp" onclick="openPopup('${listValue}')">
-			<p>${listValue}  Currently working: NO Reason: if here</p>
+	<c:forEach var="listValue" items="${list}">
+		  <div class="emp" onclick="openPopup('${listValue.getEmpID()}')">
+			<p>${listValue.getFirstName()} ${listValue.getLastName()}  Currently working: NO Reason: if here</p>
 		</div> 
 	</c:forEach>
 
