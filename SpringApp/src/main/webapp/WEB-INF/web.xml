@@ -6,6 +6,18 @@
  
  <display-name>SpringApp Web Application</display-name>
  
+ 	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>
+			org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+		</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+ 
+ 
+ 
  <servlet>
     <servlet-name>empServlet</servlet-name>
     <servlet-class>
