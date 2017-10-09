@@ -8,5 +8,6 @@
 </head>
 <body>
 	Popup Window
+	<img src="data:image/jpeg;base64,${photo}" alt="..." >
 </body>
 </html>

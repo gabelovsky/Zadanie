@@ -1,7 +1,7 @@
 package app.web;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,36 +16,41 @@ import app.server.database.PostgresDAO;
 import app.server.model.Employee;
 
 @Controller
-@ComponentScan(basePackages="app.server.database")
+@ComponentScan(basePackages = "app.server.database")
 public class EmpListController {
-	
+
 	@Autowired
 	PostgresDAO dao;
-	//@Autowired
-	//Employee emp;
-	
+
+	List<Employee> listOfEmp;
+
 	/**
-	 * Main page of employees
+	 * Main page of employees, connects to database to load data
 	 * 
 	 * @param model
 	 * @return "empList.jsp"
 	 */
-	@RequestMapping(value="/",method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String empPage(ModelMap model) {
-		List<Employee> listOfEmp=dao.getEmployeeList();
+		listOfEmp = dao.getEmployeeList();
 		model.addAttribute("list", listOfEmp);
 		return "empList";
 	}
 
 	/**
-	 * Popup on employee click
+	 * Popup on employee click, contains details about the employee
 	 * 
 	 * @param model
 	 * @return "popup.jsp"
+	 * @throws UnsupportedEncodingException
 	 */
 	@RequestMapping(value = "/popup", method = RequestMethod.GET)
-	public String popupWindow(ModelMap model, @RequestParam("empID") String empID) {
-		System.out.println("ID got:" + empID);
+	public String popupWindow(ModelMap model, @RequestParam("empID") String empID) throws UnsupportedEncodingException {
+		Employee emp = dao.getEmployeeDetails(Long.parseLong(empID));
+		if (emp.getPhoto() != null) {
+			String base64Photo = new String(Base64.getEncoder().encode(emp.getPhoto()), "UTF-8");
+			model.addAttribute("photo", base64Photo);
+		}
 		return "popup";
 	}
 

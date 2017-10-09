@@ -14,14 +14,15 @@
 <body>
 	<p1>Employees:</p1>
 	<c:forEach var="listValue" items="${list}">
-		  <div class="emp" onclick="openPopup('${listValue.getEmpID()}')">
-			<p>${listValue.getFirstName()} ${listValue.getLastName()}  Currently working: NO Reason: if here</p>
-		</div> 
+		<div class="emp" onclick="openPopup('${listValue.getEmpID()}')">
+			<p>${listValue.getFirstName()}  ${listValue.getLastName()}
+				Currently working: NO Reason: if here</p>
+		</div>
 	</c:forEach>
 
 	<script type="text/javascript">
 		function openPopup(name) {
-			window.open("./popup?empID="+name);
+			window.open("./popup?empID=" + name);
 		}
 	</script>
 </body>

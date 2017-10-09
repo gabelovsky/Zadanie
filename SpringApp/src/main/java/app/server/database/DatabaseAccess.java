@@ -21,12 +21,10 @@ public class DatabaseAccess {
 		dataSource.setPassword("postgres");
 		return dataSource;
 	}
-	
-	
-	
+
 	@Bean
-    public PostgresDAO getPostgresDAO() {
-        return new PostgresDAO(getDataSource());
-    }
-	
+	public PostgresDAO getPostgresDAO() {
+		return new PostgresDAO(getDataSource());
+	}
+
 }
