@@ -6,8 +6,7 @@ div.emp{
    height: 10%;
   
 }
-div p{
-  
+div.emp p{
   left: 3%; 
   top: 20%;
   position: relative; 

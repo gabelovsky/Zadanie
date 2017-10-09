@@ -7,13 +7,13 @@ public class Employee {
 	private String phoneNumber;
 	private String email;
 	private String encodedPhoto;
-	
+
 	private byte[] photo;
 
 	public Employee() {
 
 	}
-	
+
 	public Employee getEmployee() {
 		return this;
 	}
@@ -57,14 +57,15 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public byte[] getPhoto() {
 		return photo;
 	}
 
 	public void setPhoto(byte[] photo) {
-		this.photo=photo;
+		this.photo = photo;
 	}
+
 	public String getEncodedPhoto() {
 		return encodedPhoto;
 	}

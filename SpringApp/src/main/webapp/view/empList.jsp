@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<p1>Employees:</p1>
+	<p>Employees:</p>
 	<c:forEach var="listValue" items="${list}">
 		<div class="emp" onclick="openPopup('${listValue.getEmpID()}')">
 			<p>${listValue.getFirstName()}  ${listValue.getLastName()}
